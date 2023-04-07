@@ -7,7 +7,7 @@ import type {
   UserSignupData,
 } from '~/types.ts';
 import mongodb from '~/mongodb.ts';
-
+  
 const repository = mongodb.getDatabase;
 
 class UserRepository implements UserModel {
