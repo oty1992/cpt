@@ -63,7 +63,7 @@ export class RoomController implements IRoomController {
 
     const msg = convertToMessage({
       method,
-      baseUrl,
+      baseUrl,  
       status: 201,
     });
     log.debug(msg);
