@@ -16,6 +16,10 @@ export type MongodbOptions = {
   host: string;
 };
 
+export type OpenAiOptions = {
+  apiKey: string;
+};
+
 export type RateLimitOptions = {
   windowMs: number;
   maxRequest: number;
@@ -26,6 +30,7 @@ export type Config = {
   cors: CorsOptions;
   jwt: JwtOptions;
   mongodb: MongodbOptions;
+  openai: OpenAiOptions;
   rateLimit: RateLimitOptions;
 };
 
@@ -108,7 +113,7 @@ export interface RoomModel extends Model<RoomSchema, RoomCreateData, RoomData> {
   send(
     roomId: string,
     userId: string,
-    message: string,
+    chat: { message: string; sentiment: Sentiment },
   ): Promise<ChatData | undefined>;
 }
 
