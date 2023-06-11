@@ -20,7 +20,7 @@ export default function Room() {
   };
 
   const handleDelete = () => {
-    id && deleteRoom.mutate(id);
+    deleteRoom.mutate(id ?? '');
     navigate('/', { replace: true });
   };
 
