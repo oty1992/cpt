@@ -28,6 +28,7 @@ export type AuthToken = {
 };
 
 export interface IRoomApi {
+  translate: boolean;
   getList(): Promise<RoomInfo[]>;
   getRoom(roomId: string): Promise<RoomInfo | null>;
   create(room: RoomCreateInfo): Promise<RoomInfo>;

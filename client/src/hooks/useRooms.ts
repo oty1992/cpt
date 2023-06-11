@@ -119,6 +119,7 @@ export default function useRooms() {
   };
 
   return {
+    translate: roomApi.translate,
     toggleTranslate,
     roomsQuery,
     roomQuery,

@@ -16,10 +16,10 @@ import useRooms from '~/hooks/useRooms';
 export default function Room() {
   const { id } = useParams();
   const { user } = useAuthContext();
-  const { roomQuery, deleteRoom, sendMessage, toggleTranslate } = useRooms();
+  const { translate: t, roomQuery, deleteRoom, sendMessage, toggleTranslate } = useRooms();
   const { data: room } = roomQuery(id || '');
 
-  const [translate, setTranslate] = useState<boolean>(false);
+  const [translate, setTranslate] = useState<boolean>(t);
 
   const navigate = useNavigate();
 
